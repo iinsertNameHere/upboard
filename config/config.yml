@@ -1,0 +1,7 @@
+server:
+  name: UpBoard Server
+  icon: /static/logo.svg
+
+checks:
+  - name: SSH Service
+    command: ["bash", "-c", "systemctl is-active ssh | grep -q inactive && echo false || echo true"]
