@@ -1,0 +1,12 @@
+[Unit]
+Description=Start UpBoard at boot
+After=network.target
+
+[Service]
+Type=simple
+ExecStart={upboard_path}/start.sh
+WorkingDirectory={upboard_path}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

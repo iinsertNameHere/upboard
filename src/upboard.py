@@ -21,7 +21,7 @@ def index():
 
     now = time.time()
     force_reload = 'reload_config' in request.query
-    force_checks = 'runchecks' in request.query
+    force_checks = 'run_checks' in request.query
 
     # Reload config only on cooldown or forced
     if force_reload or (now - _last_config_reload > RELOAD_COOLDOWN):
@@ -52,4 +52,4 @@ def error404(error):
 
 
 if __name__ == '__main__':
-    run(host='localhost', port=8080, reloader=True, debug=True)
+    run(host='0.0.0.0', port=8284, reloader=True, debug=True)
