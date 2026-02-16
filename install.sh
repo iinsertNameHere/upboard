@@ -76,7 +76,7 @@ if [[ -f "./service/upboard.service" ]]; then
     echo "  sudo systemctl enable upboard.service"
     echo "  sudo systemctl start upboard.service"
     echo ""
-    echo "To uninstall the upbird systemd service, run: install.sh -R"
+    echo "To uninstall the upboard systemd service, run: install.sh -R"
     echo ""
 else
     echo "Error: ./service/upboard.service not found."
