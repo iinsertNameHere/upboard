@@ -69,15 +69,15 @@ if [[ -f "./service/upboard.service" ]]; then
     sudo cp "$TMP_SERVICE" /etc/systemd/system/upboard.service
     rm "$TMP_SERVICE"
 
-    echo "."
+    echo ""
     echo "Installed systemd service to /etc/systemd/system/upboard.service"
     echo "You can now enable and start it with:"
     echo "  sudo systemctl daemon-reload"
     echo "  sudo systemctl enable upboard.service"
     echo "  sudo systemctl start upboard.service"
-    echo "."
+    echo ""
     echo "To uninstall the upbird systemd service, run: install.sh -R"
-    echo "."
+    echo ""
 else
     echo "Error: ./service/upboard.service not found."
     exit 1
