@@ -6,6 +6,20 @@
 
 ---
 
+#### Description
+
+UpBoard is a lightweight, dark-themed status page designed for servers that run background tasks only. It provides a minimal dashboard to quickly check on your services, or to integrate into other dashboards like Homarr or Glance, without adding overhead to your server.
+
+#### Features
+- Dark Gruvbox-inspired dashboard
+- Displays overall server status and custom service checks
+- Customizable commands for service monitoring
+- Force reload configuration and checks via URL query
+- Easy installation and uninstallation via install script
+- Systemd service integration for automatic startup
+- Clean, minimalistic UI for headless or background servers
+- Can be monitored from other dashboards (Homarr, Glance, etc.)
+
 ## Installation
 
 1. Clone or download the UpBoard repository.
@@ -67,3 +81,18 @@ checks:
     type: bool_command
     command: ["bash", "-c", "systemctl is-active ssh | grep -q active && echo true || echo false"]
 ```
+
+---
+
+## Forcing Actions
+### Force Config Reload:
+Visit the dashboard with:
+`?reload_config`
+
+This reloads config.yml immediately, ignoring the 5-minute cooldown.
+
+### Force Checks Run:
+Visit the dashboard with:
+`?run_checks`
+
+This forces all configured checks to run immediately, ignoring the 3-minute cooldown.
